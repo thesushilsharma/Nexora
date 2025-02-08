@@ -76,7 +76,7 @@ export default {
         "2xl": "0 25px 50px -12px hsl(var(--foreground) / 0.25)",
         inner: "inset 0 2px 4px 0 hsl(var(--foreground) / 0.05)",
         none: "none",
-        "primary-sm": "5px 5px 0px 0px hsl(var(--primary))",
+        "primary-sm": "5px 5px 0px 0px hsl(var(--primary) /0.7)",
         "primary-lg": "0 10px 20px hsl(var(--primary) / 0.7)",
         "accent-sm":
           "0px 10px 1px hsl(var(--accent)), 0 10px 20px hsl(var(--accent) / 0.7)",
@@ -89,16 +89,13 @@ export default {
         "glow-accent": "0 10px 20px hsl(var(--accent) / 0.7)",
         "glow-destructive":
           "5px 5px hsl(var(--destructive) / 0.4), 10px 10px hsl(var(--destructive) / 0.3), 15px 15px hsl(var(--destructive) / 0.2), 20px 20px hsl(var(--destructive) / 0.1), 25px 25px hsl(var(--destructive) / 0.05)",
-        "glow-chart-1": "5px 5px 0px 0px hsl(var(--chart-1))",
-        "glow-chart-2": "0 10px 20px hsl(var(--chart-2) / 0.7)",
-        "glow-chart-3":
+        "glow-chart-1":
           "0px 10px 1px hsl(var(--chart-3)), 0 10px 20px hsl(var(--chart-3) / 0.7)",
-        "glow-chart-4": "0 20px 50px hsl(var(--chart-4) / 0.7)",
-        "glow-chart-5":
+        "glow-chart-2": "0 20px 50px hsl(var(--chart-4) / 0.7)",
+        "glow-chart-3":
           "5px 5px hsl(var(--chart-5) / 0.4), 10px 10px hsl(var(--chart-5) / 0.3), 15px 15px hsl(var(--chart-5) / 0.2), 20px 20px hsl(var(--chart-5) / 0.1), 25px 25px hsl(var(--chart-5) / 0.05)",
         "soft-secondary": "0 10px 20px hsl(var(--secondary) / 0.7)",
-        "dual-muted":
-          "0px 10px 1px hsl(var(--muted)), 0 10px 20px hsl(var(--muted-foreground)/ 0.7)",
+        "dual-muted": "0px 10px 1px hsl(var(--muted)), 0 10px 20px hsl(var(--muted-foreground)/ 0.7)",
         "deep-accent": "0 20px 50px hsl(var(--accent) / 0.7)",
         "layered-border": `
           5px 5px hsl(var(--border) / 0.4), 

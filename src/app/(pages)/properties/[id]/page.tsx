@@ -145,7 +145,7 @@ export default function PropertyDetailPage() {
 
                 {/* Property Details Section */}
                 <div className="container mx-auto px-4 mt-8">
-                    <Card className="backdrop-blur-xl bg-background/60 border-border/50 rounded-2xl overflow-hidden shadow-primary-lg">
+                    <Card className="backdrop-blur-xl bg-background/60 border-border/50 rounded-2xl overflow-hidden shadow-glow-chart-2">
                         <CardContent className="p-8">
                             <div className="mb-8">
                                 <div className="flex items-center gap-2">
@@ -231,7 +231,7 @@ export default function PropertyDetailPage() {
       }
     `}</style>
             </div>
-            
+
         </div>
     );
 }
