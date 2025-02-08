@@ -17,7 +17,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
     return (
         <Link href={`/properties/${property.id}`}>
-            <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border border-border/50 bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <Card className="group overflow-hidden hover:shadow-soft-secondary transition-all duration-300 border border-border/50 bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="aspect-[16/9] overflow-hidden relative">
                     <Image
                         src={property.image}

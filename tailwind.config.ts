@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  // darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -66,6 +66,57 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      boxShadow: {
+        sm: "0 1px 2px 0 hsl(var(--foreground) / 0.05)",
+        DEFAULT:
+          "0 1px 3px 0 hsl(var(--foreground) / 0.1), 0 1px 2px -1px hsl(var(--foreground) / 0.1)",
+        md: "0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -2px hsl(var(--foreground) / 0.1)",
+        lg: "0 10px 15px -3px hsl(var(--foreground) / 0.1), 0 4px 6px -4px hsl(var(--foreground) / 0.1)",
+        xl: "0 20px 25px -5px hsl(var(--foreground) / 0.1), 0 8px 10px -6px hsl(var(--foreground) / 0.1)",
+        "2xl": "0 25px 50px -12px hsl(var(--foreground) / 0.25)",
+        inner: "inset 0 2px 4px 0 hsl(var(--foreground) / 0.05)",
+        none: "none",
+        "primary-sm": "5px 5px 0px 0px hsl(var(--primary))",
+        "primary-lg": "0 10px 20px hsl(var(--primary) / 0.7)",
+        "accent-sm":
+          "0px 10px 1px hsl(var(--accent)), 0 10px 20px hsl(var(--accent) / 0.7)",
+        "secondary-lg": "0 20px 50px hsl(var(--secondary) / 0.7)",
+        "muted-layered":
+          "5px 5px hsl(var(--muted) / 0.4), 10px 10px hsl(var(--muted) / 0.3), 15px 15px hsl(var(--muted) / 0.2), 20px 20px hsl(var(--muted) / 0.1), 25px 25px hsl(var(--muted) / 0.05)",
+        "destructive-sm": "5px 5px 0px 0px hsl(var(--destructive))",
+        "chart-1-sm": "5px 5px 0px 0px hsl(var(--chart-1))",
+        "chart-2-lg": "0 10px 20px hsl(var(--chart-2) / 0.7)",
+        "glow-accent": "0 10px 20px hsl(var(--accent) / 0.7)",
+        "glow-destructive":
+          "5px 5px hsl(var(--destructive) / 0.4), 10px 10px hsl(var(--destructive) / 0.3), 15px 15px hsl(var(--destructive) / 0.2), 20px 20px hsl(var(--destructive) / 0.1), 25px 25px hsl(var(--destructive) / 0.05)",
+        "glow-chart-1": "5px 5px 0px 0px hsl(var(--chart-1))",
+        "glow-chart-2": "0 10px 20px hsl(var(--chart-2) / 0.7)",
+        "glow-chart-3":
+          "0px 10px 1px hsl(var(--chart-3)), 0 10px 20px hsl(var(--chart-3) / 0.7)",
+        "glow-chart-4": "0 20px 50px hsl(var(--chart-4) / 0.7)",
+        "glow-chart-5":
+          "5px 5px hsl(var(--chart-5) / 0.4), 10px 10px hsl(var(--chart-5) / 0.3), 15px 15px hsl(var(--chart-5) / 0.2), 20px 20px hsl(var(--chart-5) / 0.1), 25px 25px hsl(var(--chart-5) / 0.05)",
+        "soft-secondary": "0 10px 20px hsl(var(--secondary) / 0.7)",
+        "dual-muted":
+          "0px 10px 1px hsl(var(--muted)), 0 10px 20px hsl(var(--muted-foreground)/ 0.7)",
+        "deep-accent": "0 20px 50px hsl(var(--accent) / 0.7)",
+        "layered-border": `
+          5px 5px hsl(var(--border) / 0.4), 
+          10px 10px hsl(var(--border) / 0.3), 
+          15px 15px hsl(var(--border) / 0.2), 
+          20px 20px hsl(var(--border) / 0.1), 
+          25px 25px hsl(var(--border) / 0.05)
+        `,
+      },
+      dropShadow: {
+        sm: "0 1px 1px hsl(var(--foreground) / 0.05)",
+        DEFAULT: "0 1px 2px hsl(var(--foreground) / 0.1)",
+        md: "0 4px 3px hsl(var(--foreground) / 0.1)",
+        lg: "0 10px 8px hsl(var(--foreground) / 0.1)",
+        xl: "0 20px 13px hsl(var(--foreground) / 0.1)",
+        "2xl": "0 25px 25px hsl(var(--foreground) / 0.15)",
+        none: "none",
+      },
       keyframes: {
         "accordion-down": {
           from: {
@@ -92,5 +143,3 @@ export default {
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
-
-

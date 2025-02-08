@@ -32,7 +32,7 @@ export default function PropertyDetailPage() {
 
     if (isLoading) {
         return (
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-4 py-8 ">
                 <Skeleton className="h-[600px] w-full mb-8 rounded-2xl bg-muted" />
                 <div className="flex gap-4 mb-8">
                     {[...Array(4)].map((_, i) => (
@@ -73,7 +73,7 @@ export default function PropertyDetailPage() {
 
     return (
         <div className="min-h-screen bg-background/50 pb-12">
-            <div className="bg-gradient-to-b from-background to-background/5 border-b">
+            <div className="bg-gradient-to-b from-background to-background/5">
 
                 {/* Main Image Slider with Autoplay */}
                 <Carousel plugins={[plugin.current]} className="embla relative overflow-hidden" ref={mainRef}>
@@ -87,7 +87,7 @@ export default function PropertyDetailPage() {
                                             alt={`${property.title} - View ${index + 1}`}
                                             width={1920}
                                             height={1080}
-                                            className="w-full h-full object-cover rounded-lg transition-shadow duration-300 hover:shadow-primary/30"
+                                            className="w-full h-full object-cover rounded-lg transition-shadow duration-300"
                                             priority={index === 0}
                                         />
                                     </div>
@@ -145,7 +145,7 @@ export default function PropertyDetailPage() {
 
                 {/* Property Details Section */}
                 <div className="container mx-auto px-4 mt-8">
-                    <Card className="backdrop-blur-xl bg-background/60 border-border/50 shadow-2xl rounded-2xl overflow-hidden">
+                    <Card className="backdrop-blur-xl bg-background/60 border-border/50 rounded-2xl overflow-hidden shadow-primary-lg">
                         <CardContent className="p-8">
                             <div className="mb-8">
                                 <div className="flex items-center gap-2">
@@ -164,7 +164,7 @@ export default function PropertyDetailPage() {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {/* Property Details Card */}
-                                <Card className="bg-card/50 backdrop-blur border-border/50 hover:shadow-lg transition-shadow duration-300">
+                                <Card className="bg-card/50 backdrop-blur border-border/50 hover:shadow-dual-muted transition-shadow duration-300">
                                     <CardContent className="p-6">
                                         <h2 className="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary/90 to-primary/70">
                                             Property Details
@@ -196,7 +196,7 @@ export default function PropertyDetailPage() {
                                 </Card>
 
                                 {/* Location Card */}
-                                <Card className="bg-card/50 backdrop-blur border-border/50 hover:shadow-lg transition-shadow duration-300">
+                                <Card className="bg-card/50 backdrop-blur border-border/50 hover:shadow-dual-muted transition-shadow duration-300">
                                     <CardContent className="p-6">
                                         <h2 className="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary/90 to-primary/70">
                                             Location
@@ -231,6 +231,7 @@ export default function PropertyDetailPage() {
       }
     `}</style>
             </div>
+            
         </div>
     );
 }

@@ -12,7 +12,7 @@ interface PropertyFiltersProps {
 
 export function PropertyFilters({ minPrice, maxPrice, bedrooms, onFilterChange }: PropertyFiltersProps) {
   return (
-    <Card className="mb-6">
+    <Card className="mb-6 p-4 rounded-lg shadow-dual-muted">
       <CardContent className="p-4 grid gap-4 md:grid-cols-3">
         <div className="space-y-2">
           <Label htmlFor="minPrice">Min Price</Label>

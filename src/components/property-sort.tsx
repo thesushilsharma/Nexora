@@ -7,7 +7,7 @@ interface PropertySortProps {
 
 export function PropertySort({ value, onChange }: PropertySortProps) {
   return (
-    <Select value={value} onValueChange={onChange}>
+    <Select value={value} onValueChange={onChange} >
       <SelectTrigger className="w-[200px]">
         <SelectValue placeholder="Sort by..." />
       </SelectTrigger>

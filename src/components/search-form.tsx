@@ -11,7 +11,7 @@ export function SearchForm() {
         <div className="container mx-auto px-4 py-8">
             <Form
                 action="/search"
-                className="flex items-center space-x-2 p-2 bg-card rounded-xl shadow-2xl border border-border backdrop-blur-xl"
+                className="flex items-center space-x-2 p-2 bg-card rounded-xl shadow-layered-border border border-border backdrop-blur-xl transition-all duration-300 hover:shadow-md hover:scale-105"
             >
                 {/* Input Field */}
                 <Input

@@ -50,6 +50,16 @@
     --chart-3: 180 100% 50%;
     --chart-4: 260 100% 60%;
     --chart-5: 300 100% 60%;
+
+    /* 🌟 Premium listing effects */
+    --glass-bg: hsl(
+      280 30% 95% / 0.8
+    ); /* Light mode glass background with transparency */
+    --glass-border: hsl(
+      280 30% 80% / 0.2
+    ); /* Light mode glass border with transparency */
+    --glass-shadow: 0 4px 6px -1px hsl(280 30% 10% / 0.1),
+      0 2px 4px -2px hsl(280 30% 10% / 0.1); /* Light mode glass shadow */
   }
 
   .dark {
@@ -78,5 +88,15 @@
     --chart-3: 180 100% 60%;
     --chart-4: 260 100% 70%;
     --chart-5: 300 100% 70%;
+
+    /* 🌟 Premium listing effects */
+    --glass-bg: hsl(
+      280 50% 5% / 0.8
+    ); /* Dark mode glass background with transparency */
+    --glass-border: hsl(
+      280 50% 30% / 0.2
+    ); /* Dark mode glass border with transparency */
+    --glass-shadow: 0 4px 6px -1px hsl(280 30% 95% / 0.1),
+      0 2px 4px -2px hsl(280 30% 95% / 0.1); /* Dark mode glass shadow */
   }
 }
