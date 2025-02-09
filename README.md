@@ -13,3 +13,12 @@ This project is a Next.js and TypeScript based real estate product listing page 
   - Order properties alphabetically by address.
 - **Property Details**: 
   - Clicking on a property image navigates to a detailed view of the property under a separate link (`/property/[id]`).
+
+## Acknowledgments
+
+This project would not have been possible without the contributions of the following open-source projects and resources:
+
+- **[shadCN](https://ui.shadcn.com/)**: A fantastic library that provides reusable components and utilities for building modern web applications. Thank you for creating such a powerful tool!
+
+- **Glow Effect**: The glow effect used in this project was inspired by and adapted from [react-gradient-glow](https://github.com/developedbyed/react-gradient-glow) by [developedbyed](https://github.com/developedbyed). Special thanks for sharing this creative and visually appealing implementation.
+  

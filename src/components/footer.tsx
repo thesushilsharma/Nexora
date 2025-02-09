@@ -11,7 +11,7 @@ export default function Footer() {
               href="https://github.com/thesushilsharma"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text--destructive transition-all duration-300"
+              className="bg-foreground text-primary font-semibold"
             >
               Sushil Sharma
             </a>
@@ -22,7 +22,7 @@ export default function Footer() {
               href="https://github.com/thesushilsharma/Nexora"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-destructive transition-all duration-300"
+              className="bg-foreground text-primary font-semibold"
             >
               GitHub
             </a>

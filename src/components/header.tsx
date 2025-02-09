@@ -61,7 +61,7 @@ const Header = () => {
                             {/* Register Button */}
                             <div className="hidden sm:flex">
                                 <Link
-                                    className="rounded-md bg-secondary px-5 py-2.5 text-sm font-medium text-secondary-foreground hover:text-foreground hover:bg-primary-foreground transition-all duration-300"
+                                    className="rounded-md bg-secondary px-5 py-2.5 text-sm font-medium text-secondary-foreground hover:text-foreground hover:bg-destructive transition-all duration-300"
                                     href="#"
                                 >
                                     Join Us
