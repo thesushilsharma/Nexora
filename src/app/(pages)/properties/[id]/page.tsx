@@ -138,7 +138,7 @@ export default function PropertyDetailPage() {
                         {images.map((image, index) => (
                             <CarouselItem key={index}>
                                 <div className="aspect-[16/9] md:aspect-[21/9] flex justify-center items-center">
-                                    <div className="w-full max-w-4xl mx-auto shadow-2xl rounded-lg overflow-hidden">
+                                    <div className="w-full max-w-4xl mx-auto shadow-destructive-sm rounded-lg overflow-hidden">
                                         <Image
                                             src={image}
                                             alt={`${property.title} - View ${index + 1}`}
