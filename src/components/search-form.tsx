@@ -24,7 +24,7 @@ export function SearchForm() {
                 {/* Search Button */}
                 <Button
                     type="submit"
-                    className="bg-primary hover:bg-destructive text-primary-foreground px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 hover:bg-accent"
                 >
                     {status.pending ? 'Searching...' : 'Search'}
                     <Search className="ml-2 w-4 h-4" />

@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Image from "next/image";
 import { SearchForm } from '@/components/search-form'
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -37,11 +38,11 @@ export default function Home() {
                       <p className="text-foreground mt-2">
                         Welcome to Nexora, where luxury meets tranquility.
                       </p>
-                      <button
-                        className="mt-4 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium shadow-md hover:bg-destructive transition-all duration-300"
+                      <Button
+                        className="mt-4 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium shadow-md hover:bg-accent transition-all duration-300"
                       >
                         Get Started
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>
