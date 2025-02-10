@@ -4,6 +4,7 @@ import "./globals.css";
 import QueryProvider from "@/context/QueryProvider";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NuqsAdapter>
-              {children}
+              <main>{children}</main>
+              <Toaster position="top-right"/>
             </NuqsAdapter>
           </ThemeProvider>
         </QueryProvider>
