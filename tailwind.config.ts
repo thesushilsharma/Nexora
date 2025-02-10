@@ -131,10 +131,19 @@ export default {
             height: "0",
           },
         },
+        "pulse-shadow": {
+          "0%, 100%": {
+            boxShadow: "0 0 8px hsl(var(--accent) / 0.5)",
+          },
+          "50%": {
+            boxShadow: "0 0 16px hsl(var(--accent) / 0.7)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-shadow": "pulse-shadow 1.5s infinite",
       },
     },
   },

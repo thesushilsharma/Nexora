@@ -1,7 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface PropertyFiltersProps {
   minPrice: string;
@@ -10,9 +16,14 @@ interface PropertyFiltersProps {
   onFilterChange: (name: string, value: string) => void;
 }
 
-export function PropertyFilters({ minPrice, maxPrice, bedrooms, onFilterChange }: PropertyFiltersProps) {
+export function PropertyFilters({
+  minPrice,
+  maxPrice,
+  bedrooms,
+  onFilterChange,
+}: PropertyFiltersProps) {
   return (
-    <Card className="mb-6 p-4 rounded-lg transition-all duration-300 hover:scale-105">
+    <Card className="mb-6 p-4 rounded-lg animate-pulse-shadow">
       <CardContent className="p-4 grid gap-4 md:grid-cols-3">
         <div className="space-y-2">
           <Label htmlFor="minPrice">Min Price</Label>
@@ -36,8 +47,8 @@ export function PropertyFilters({ minPrice, maxPrice, bedrooms, onFilterChange }
         </div>
         <div className="space-y-2">
           <Label htmlFor="bedrooms">Bedrooms</Label>
-          <Select 
-            value={bedrooms} 
+          <Select
+            value={bedrooms}
             onValueChange={(value) => onFilterChange("bedrooms", value)}
           >
             <SelectTrigger>
