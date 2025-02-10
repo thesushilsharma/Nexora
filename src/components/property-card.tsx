@@ -28,7 +28,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
                         priority // Use for above-the-fold images to improve LCP
                         sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-muted/60 via-background/50 to-transparent opacity-0 group-hover:opacity-45 backdrop-blur-sm transition-opacity duration-300" />
                 </div>
                 <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{property.title}</h3>
