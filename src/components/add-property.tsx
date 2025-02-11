@@ -30,6 +30,9 @@ import { X } from "lucide-react";
 import { Checkbox } from "./ui/checkbox";
 import { Textarea } from "./ui/textarea";
 import { AMENITIES_LIST } from "@/lib/constants";
+import dynamic from "next/dynamic"
+const Map  = dynamic(() => import("./maps"), { ssr: false })
+
 
 const initialState: ActionResponse = {
   success: false,
@@ -44,6 +47,10 @@ export default function PropertyForm() {
   const [errors, setErrors] = useState<Record<string, string[]>>({});
   const [images, setImages] = useState<File[]>([]);
   const [videos, setVideos] = useState<File[]>([]);
+  const [formData, setFormData] = useState({
+    latitude: 0,
+    longitude: 0,
+  })
 
   useEffect(() => {
     if (state.success) {
@@ -63,7 +70,7 @@ export default function PropertyForm() {
     const validationResult = PropertySchema.safeParse(
       Object.fromEntries(formData)
     );
-    console.log("validationResult:", validationResult);
+    //console.log("validationResult:", validationResult);
 
     if (!validationResult.success) {
       setErrors(validationResult.error.flatten().fieldErrors);
@@ -72,6 +79,19 @@ export default function PropertyForm() {
 
     setErrors({});
     formAction(formData);
+  };
+
+  const handleMapClick = (event: { lat: number; lng: number }) => {
+    // Update the formData state with the new coordinates
+    setFormData({
+      ...formData,
+      latitude: event.lat,
+      longitude: event.lng,
+    });
+  
+    // Log the latitude and longitude values
+    console.log("Latitude:", event.lat);
+    console.log("Longitude:", event.lng);
   };
 
   const onImageDrop = useCallback((acceptedFiles: File[]) => {
@@ -356,6 +376,22 @@ export default function PropertyForm() {
               )}
             </div>
           </div>
+          <div className="space-y-2 col-span-2">
+            <label className="block text-sm font-medium">
+              Select Location on Map <span className="text-red-500">*</span>
+            </label>
+            <div
+              className={`h-[400px] rounded-lg overflow-hidden ${errors.latitude || errors.longitude ? "border-red-500" : ""}`}
+            >
+              <Map
+                initialCenter={{ lat: 40.7128, lng: -74.0060 }}
+                onClick={handleMapClick}
+              />
+            </div>
+            {(errors.latitude || errors.longitude) && (
+              <span className="text-sm text-red-500">Marking the location on the map is required.</span>
+            )}
+          </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -366,6 +402,8 @@ export default function PropertyForm() {
                 name="latitude"
                 required
                 step="any"
+                value={formData.latitude}
+                onChange={(e) => setFormData({ ...formData, latitude: Number.parseFloat(e.target.value) })}
               />
               {errors.latitude && (
                 <p className="text-red-500 text-xs">{errors.latitude[0]}</p>
@@ -379,6 +417,8 @@ export default function PropertyForm() {
                 name="longitude"
                 required
                 step="any"
+                value={formData.longitude}
+                onChange={(e) => setFormData({ ...formData, longitude: Number.parseFloat(e.target.value) })}
               />
               {errors.longitude && (
                 <p className="text-red-500 text-xs">{errors.longitude[0]}</p>
@@ -503,18 +543,18 @@ export default function PropertyForm() {
               <p className="text-red-500 text-xs">{errors.videos[0]}</p>
             )}
           </div>
+          <Button type="submit" className="w-full" disabled={isPending}>
+            {isPending ? "Submitting..." : "Submit"}
+          </Button>
         </form>
       </CardContent>
       <CardFooter>
-        <Button type="submit" className="w-full" disabled={isPending}>
-          {isPending ? "Submitting..." : "Submit"}
-        </Button>
+        {state.message && (
+          <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
+            {state.message}
+          </div>
+        )}
       </CardFooter>
-      {state.message && (
-        <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
-          {state.message}
-        </div>
-      )}
     </Card>
   );
 }

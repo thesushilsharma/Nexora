@@ -100,3 +100,9 @@
       0 2px 4px -2px hsl(280 30% 95% / 0.1); /* Dark mode glass shadow */
   }
 }
+
+.leaflet-contaner {
+  height:90vh;
+  width:90%;
+  border-radius: 2rem
+}
