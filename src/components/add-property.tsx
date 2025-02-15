@@ -30,14 +30,15 @@ import { X } from "lucide-react";
 import { Checkbox } from "./ui/checkbox";
 import { Textarea } from "./ui/textarea";
 import { AMENITIES_LIST } from "@/lib/constants";
-import dynamic from "next/dynamic"
-const Map  = dynamic(() => import("./maps"), { ssr: false })
-
+import dynamic from "next/dynamic";
+const Map = dynamic(() => import("./maps"), { ssr: false });
 
 const initialState: ActionResponse = {
   success: false,
   errors: {},
 };
+
+const MAX_FILE_SIZE = 4.5 * 1024 * 1024; // 10MB
 
 export default function PropertyForm() {
   const [state, formAction, isPending] = useActionState(
@@ -50,7 +51,7 @@ export default function PropertyForm() {
   const [formData, setFormData] = useState({
     latitude: 0,
     longitude: 0,
-  })
+  });
 
   useEffect(() => {
     if (state.success) {
@@ -88,18 +89,24 @@ export default function PropertyForm() {
       latitude: event.lat,
       longitude: event.lng,
     });
-  
+
     // Log the latitude and longitude values
     console.log("Latitude:", event.lat);
     console.log("Longitude:", event.lng);
   };
 
   const onImageDrop = useCallback((acceptedFiles: File[]) => {
-    setImages((prev) => [...prev, ...acceptedFiles]);
+    const validFiles = acceptedFiles.filter(
+      (file) => file.size <= MAX_FILE_SIZE
+    );
+    setImages((prev) => [...prev, ...validFiles]);
   }, []);
 
   const onVideoDrop = useCallback((acceptedFiles: File[]) => {
-    setVideos((prev) => [...prev, ...acceptedFiles]);
+    const validFiles = acceptedFiles.filter(
+      (file) => file.size <= MAX_FILE_SIZE
+    );
+    setVideos((prev) => [...prev, ...validFiles]);
   }, []);
 
   const removeImage = (index: number) => {
@@ -381,15 +388,18 @@ export default function PropertyForm() {
               Select Location on Map <span className="text-red-500">*</span>
             </label>
             <div
-              className={`h-[400px] rounded-lg overflow-hidden ${errors.latitude || errors.longitude ? "border-red-500" : ""}`}
+              className={`h-[400px] rounded-lg overflow-hidden ${errors.latitude || errors.longitude ? "border-red-500" : ""
+                }`}
             >
               <Map
-                initialCenter={{ lat: 40.7128, lng: -74.0060 }}
+                initialCenter={{ lat: 40.7128, lng: -74.006 }}
                 onClick={handleMapClick}
               />
             </div>
             {(errors.latitude || errors.longitude) && (
-              <span className="text-sm text-red-500">Marking the location on the map is required.</span>
+              <span className="text-sm text-red-500">
+                Marking the location on the map is required.
+              </span>
             )}
           </div>
 
@@ -403,7 +413,12 @@ export default function PropertyForm() {
                 required
                 step="any"
                 value={formData.latitude}
-                onChange={(e) => setFormData({ ...formData, latitude: Number.parseFloat(e.target.value) })}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    latitude: Number.parseFloat(e.target.value),
+                  })
+                }
               />
               {errors.latitude && (
                 <p className="text-red-500 text-xs">{errors.latitude[0]}</p>
@@ -418,7 +433,12 @@ export default function PropertyForm() {
                 required
                 step="any"
                 value={formData.longitude}
-                onChange={(e) => setFormData({ ...formData, longitude: Number.parseFloat(e.target.value) })}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    longitude: Number.parseFloat(e.target.value),
+                  })
+                }
               />
               {errors.longitude && (
                 <p className="text-red-500 text-xs">{errors.longitude[0]}</p>
